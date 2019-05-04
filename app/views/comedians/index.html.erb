@@ -4,7 +4,7 @@
   <p>Cities of comedians: <%= @unique_cities.join(', ') %></p>
   <% @comedians.each do |comedian| %>
    <div id="comedian-<%= comedian.id %>" >
-    <h2><%= comedian.name %></h2>
+    <h2><%= link_to comedian.name, "/comedians/" + "#{comedian.id}" %></h2>
     <p>Age: <%= comedian.age %></p>
     <p>Born in: <%= comedian.city %></p>
     <p>Number of appearances: <%= comedian.specials_count %></p>
