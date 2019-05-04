@@ -66,6 +66,19 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
 
     expect(page).to have_content("Cities of comedians: Denver, Los Angeles")
   end
+
+  it "the user sees that the comedians have links" do
+    comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+    comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+    comedian_3 = Comedian.create(name: "Alex", age: 20, city: "Los Angeles", image_url: "google.com")
+    visit '/comedians'
+
+    expect(page).to have_link(nil, href: '/comedians/1')
+    expect(page).to have_link(nil, href: '/comedians/2')
+    expect(page).to have_link(nil, href: '/comedians/3')
+  end
+  # clicks on a comedian and is redirected to that comedians info
+
   # User Story 7
   #
   # As a visitor
