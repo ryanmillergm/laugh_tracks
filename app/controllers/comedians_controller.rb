@@ -4,11 +4,16 @@ class ComediansController < ApplicationController
     # binding.pry
     if age.nil?
       @comedians = Comedian.all
+      @specials = Special.all
+      @unique_cities = Comedian.unique_cities
+      @average_age = Comedian.average_age
     else
       @comedians = Comedian.comedian_age(age)
+      @specials = Special.all
+      @unique_cities = @comedians.unique_cities
+      @average_age = @comedians.average_age
     end
-    @specials = Special.all
-    @unique_cities = Comedian.unique_cities
+
   end
 
   def new

@@ -1,6 +1,6 @@
 <h2>Comedians</h2>
 <h1>Statistics</h1>
-  <p><%= "Average age of comedians: #{@comedians.average_age}" %></p>
+  <p><%= "Average age of comedians: #{@average_age}" %></p>
   <p>Cities of comedians: <%= @unique_cities.join(', ') %></p>
   <% @comedians.each do |comedian| %>
    <div id="comedian-<%= comedian.id %>" >
