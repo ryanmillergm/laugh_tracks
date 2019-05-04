@@ -1,7 +1,6 @@
 class ComediansController < ApplicationController
   def index
     age = params[:age]
-    # binding.pry
     if age.nil?
       @comedians = Comedian.all
       @specials = Special.all
@@ -13,7 +12,11 @@ class ComediansController < ApplicationController
       @unique_cities = @comedians.unique_cities
       @average_age = @comedians.average_age
     end
+  end
 
+  def show
+    # binding.pry
+    @comedian = Comedian.find(params[:id])
   end
 
   def new

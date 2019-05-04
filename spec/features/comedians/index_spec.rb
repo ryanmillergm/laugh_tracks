@@ -66,17 +66,18 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
 
     expect(page).to have_content("Cities of comedians: Denver, Los Angeles")
   end
-  # User Story 7
-  #
-  # As a visitor
-  # When I visit `/comedians`
-  # Then I see an area at the top of the page called 'Statistics'
-  # In that 'Statistics' area, I see the following information:
-  # - the average age of all comedians on the page (if the page is
-  # filtered for specific comedians, the statistics should reflect the new group)
-  # - a unique list of cities for each comedian on the page
-  #
-  # Averaging and uniqueness should be done in ActiveRecord NOT
-  # using Ruby
+
+  it "the user sees that the comedians have links" do
+    comedian_1 = Comedian.create(name: "John", age: 24, city: "Denver", image_url: "google.com")
+    comedian_2 = Comedian.create(name: "Paul", age: 34, city: "Denver", image_url: "google.com")
+    comedian_3 = Comedian.create(name: "Alex", age: 20, city: "Los Angeles", image_url: "google.com")
+    visit '/comedians'
+
+    expect(page).to have_link("#{comedian_1.name}", href: "/comedians/#{comedian_1.id}" )
+    expect(page).to have_link("#{comedian_2.name}", href: "/comedians/#{comedian_2.id}" )
+    expect(page).to have_link("#{comedian_3.name}", href: "/comedians/#{comedian_3.id}" )
+  end
+  # clicks on a comedian and is redirected to that comedians info
+
 
 end
