@@ -13,7 +13,10 @@ class ComediansController < ApplicationController
       @unique_cities = @comedians.unique_cities
       @average_age = @comedians.average_age
     end
+  end
 
+  def show
+    @comedian = Comedian.find(params[:id])
   end
 
   def new
