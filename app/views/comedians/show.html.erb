@@ -1,0 +1,15 @@
+<h2>Comedian</h2>
+
+   <div id="comedian-<%= @comedian.id %>" >
+    <h2><%= @comedian.name %></h2>
+    <p>Age: <%= @comedian.age %></p>
+    <p>Born in: <%= @comedian.city %></p>
+    <p>Number of appearances: <%= @comedian.specials_count %></p>
+    <% @comedian.specials.each do |special|%>
+    <div>
+      <p>TV special: <%= special.name %></p>
+      <p>Run time: <%= special.runtime_minutes %> minutes</p>
+      <img src="<%= special.image_url %>">
+    </div>
+  </div>
+    <% end %>

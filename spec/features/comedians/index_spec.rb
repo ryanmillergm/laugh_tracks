@@ -73,7 +73,6 @@ RSpec.describe "an unauthenticated user visiting welcome page" do
     comedian_3 = Comedian.create(name: "Alex", age: 20, city: "Los Angeles", image_url: "google.com")
     visit '/comedians'
 
-    save_and_open_page
     expect(page).to have_link("#{comedian_1.name}", href: "/comedians/#{comedian_1.id}" )
     expect(page).to have_link("#{comedian_2.name}", href: "/comedians/#{comedian_2.id}" )
     expect(page).to have_link("#{comedian_3.name}", href: "/comedians/#{comedian_3.id}" )
