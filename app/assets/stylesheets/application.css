@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+a {
+  text-decoration: none;
+}
+
+header {
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+}
+
+body {
+  padding: 30px;
+  width: 100%;
+}
+
+.comedian {
+  font-size: 200%;
+}
+
+#container {
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+}
+
+#comedian {
+  font-size: 200%;
+  float: left;
+  font-weight: bold;
+}
+
+#home {
+  color: red;
+  font-size: 150%;
+  font-weight: bold;
+  padding-right: 15%;
+  float: right;
+}

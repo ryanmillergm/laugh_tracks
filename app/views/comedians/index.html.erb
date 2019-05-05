@@ -1,19 +1,21 @@
-<h2>Comedians</h2>
-<h1>Statistics</h1>
-  <p><%= "Average age of comedians: #{@average_age}" %></p>
-  <p>Cities of comedians: <%= @unique_cities.join(', ') %></p>
-  <% @comedians.each do |comedian| %>
-   <div id="comedian-<%= comedian.id %>" >
-    <h2><%= link_to comedian.name, "/comedians/" + "#{comedian.id}" %></h2>
-    <p>Age: <%= comedian.age %></p>
-    <p>Born in: <%= comedian.city %></p>
-    <p>Number of appearances: <%= comedian.specials_count %></p>
+<header id="container">
+  <div id="comedian">Comedian</div>
+</header>
+  <h2>Statistics</h2>
+    <p><%= "Average age of comedians: #{@average_age}" %></p>
+    <p>Cities of comedians: <%= @unique_cities.join(', ') %></p>
+    <% @comedians.each do |comedian| %>
+     <div id="comedian-<%= comedian.id %>" >
+      <h2><%= link_to comedian.name, "/comedians/" + "#{comedian.id}" %></h2>
+        <p>Age: <%= comedian.age %></p>
+        <p>Born in: <%= comedian.city %></p>
+        <p>Number of appearances: <%= comedian.specials_count %></p>
     <% comedian.specials.each do |special|%>
-    <div>
-      <p>TV special: <%= special.name %></p>
-      <p>Run time: <%= special.runtime_minutes %> minutes</p>
-      <img src="<%= special.image_url %>">
+      <div>
+        <p>TV special: <%= special.name %></p>
+        <p>Run time: <%= special.runtime_minutes %> minutes</p>
+        <img src="<%= special.image_url %>">
+      </div>
     </div>
-  </div>
     <% end %>
-  <% end %>
+    <% end %>

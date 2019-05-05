@@ -1,5 +1,11 @@
-<h2>Comedian</h2>
+<header id="container">
+  <div id="comedian">Comedian</div>
+  <div id="home">
+    <a href="/comedians">Home</a>
+  </div>
+</header>
 
+<body>
    <div id="comedian-<%= @comedian.id %>" >
     <h2><%= @comedian.name %></h2>
     <p>Age: <%= @comedian.age %></p>
@@ -13,3 +19,4 @@
     </div>
   </div>
     <% end %>
+</body>
